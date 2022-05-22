@@ -1,0 +1,108 @@
+
+package com.example.javaDay01.controllers;
+
+import org.springframework.web.bind.annotation.*;
+import java.util.ArrayList;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
+
+
+
+@RestController
+public class employeeController {
+    private ArrayList<String> employees = new ArrayList<>();
+
+
+    
+ // First Question *****************************************************
+
+
+    public class nameController {
+    private ArrayList<String> names = new ArrayList<>();
+    private LocalDateTime now = LocalDateTime.now();
+    Date date = new Date();
+
+    @GetMapping("date")
+    public LocalDateTime getDate(){
+        return now;
+
+    }
+    @GetMapping("date/firstname")
+    public String getFirstName(){
+        return "Abdulrahman";
+    }
+    @GetMapping("date/lastname")
+    public String getLastName(){
+        return "Albalood";
+    }
+
+}
+
+ // Second Question *****************************************************
+
+
+
+    @GetMapping("employee")
+    public ArrayList<String> getEmployees(){
+        return employees;
+    }
+
+
+
+
+    @PostMapping("employee/add")
+    public String  postEmployee(@RequestBody String employeeName){
+        employees.add(employeeName);
+        return "Employee added";
+    }
+
+
+
+
+    @PutMapping("employee/update/{index}")
+    public String  putEmployee(@PathVariable Integer index, @RequestBody String employeeName){
+        employees.set(index,employeeName);
+        return "employee name updated";
+    }
+    @DeleteMapping("employee/delete/{index}")
+    public String deleteBook(@PathVariable Integer index){
+        employees.remove(index);
+        return "employee deleted";
+    }
+
+
+
+     // Third Question *****************************************************
+
+
+
+    
+
+    public class foodNameController {
+    private ArrayList<String> food = new ArrayList<>();
+    @GetMapping("food")
+    public ArrayList<String> getFoodNames(){
+
+        return food;
+    }
+    @PostMapping("food/add")
+    public String  postFoodNames(@RequestBody String foodNames){
+        food.add(foodNames);
+        return "food added";
+    }
+    @PutMapping("food/update/{index}")
+    public String  putFood(@PathVariable Integer index, @RequestBody String foodNames){
+        food.set(index,foodNames);
+        return "food name updated";
+    }
+    @DeleteMapping("food/delete/{index}")//dynamic route,
+    public String deleteFoodNames(@PathVariable Integer index){
+        food.remove(index);
+        return "food deleted";
+    }
+}
+
+}
