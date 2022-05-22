@@ -1,0 +1,108 @@
+package com.example.springday01.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import java.util.Date;
+
+import javax.xml.crypto.Data;
+
+@RestController
+
+public class nameController {
+    @GetMapping("date")
+        public String getDate(){
+            return new Date().toString();
+        }
+    @GetMapping ("firstName")
+    public String getFirstname(){
+        return "Renad";
+    }
+
+    @GetMapping ("lastName")
+    public String getListname(){
+        return "Alotaibi";
+    }
+}
+
+///////
+
+Q2
+
+package com.example.springday01.controller;
+
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+
+@RestController
+public class employeeController {
+    private ArrayList<String> list=new ArrayList<>();
+// get user
+    @GetMapping("employee")
+    public ArrayList<String> getemployee () {
+        return list;
+    }
+
+//post user
+    @PostMapping("employee")
+    public String addemployee (@RequestBody String employee ) {
+        list.add(employee );
+
+        return "add new employee";
+    }
+//edit user
+    @PutMapping("employee/{index}")
+    public String editemployee (@PathVariable int index,String employee ) {
+        list.set(index, employee );
+        return" Edit employee Successfully";
+    }
+    //delet user
+    @DeleteMapping("employee/{index}")
+    public String deletemployee (@PathVariable int index){
+        list.remove(0);
+        return "Employee Deleted Successfully";
+    }}
+
+/////
+Q3
+
+
+package com.example.springday01.controller;
+
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+
+@RestController
+public class foodNameController {
+    private ArrayList<String> list=new ArrayList<>();
+    // get user
+    @GetMapping("food")
+    public ArrayList<String> getfood () {
+        return list;
+    }
+
+    //post user
+    @PostMapping("food")
+    public String addfood(@RequestBody String food ) {
+        list.add(food );
+
+        return "add new food";
+    }
+    //edit user
+    @PutMapping("food/{index}")
+    public String editfood(@PathVariable int index,String food ) {
+        list.set(index,food );
+        return" Edit food Successfully";
+    }
+    //delet user
+    @DeleteMapping("food/{index}")
+    public String deletfood (@PathVariable int index){
+        list.remove(0);
+        return "food Deleted Successfully";
+    }}
+
+
+
+
+
