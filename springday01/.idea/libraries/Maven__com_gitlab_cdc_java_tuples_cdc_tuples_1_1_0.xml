@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.gitlab.cdc-java.tuples:cdc-tuples:1.1.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gitlab/cdc-java/tuples/cdc-tuples/1.1.0/cdc-tuples-1.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gitlab/cdc-java/tuples/cdc-tuples/1.1.0/cdc-tuples-1.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gitlab/cdc-java/tuples/cdc-tuples/1.1.0/cdc-tuples-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
